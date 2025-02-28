@@ -1,0 +1,4 @@
+Hi, I`m a clone of file1.txt
+
+
+
