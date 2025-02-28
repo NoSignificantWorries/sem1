@@ -1,6 +1,8 @@
 Hi, I`m a clone of file1.txt
 
-Some information about mouses...
+Some information about mouses and rats...
+Also about snakes and lizards.
 
 --Final text here.
+Good bye!
 

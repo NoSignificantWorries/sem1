@@ -1,5 +1,6 @@
 Start of new File.
 
 Some text about rats...
+--And about mouses from file2.txt
 And Bla-Bla-Bla...
 
