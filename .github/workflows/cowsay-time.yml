@@ -2,8 +2,8 @@ name: Cowsay Time
 
 on:
   schedule:
-    - cron: '0 * * * *' # Runs every hour
-  workflow_dispatch: # Allows manual triggering
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   cowsay:
@@ -16,11 +16,12 @@ jobs:
       - name: Set up cowsay
         run: |
           sudo apt-get update
-          sudo apt-get install cowsay
+          sudo apt-get install -y cowsay lolcat fortune
 
       - name: Get current time
         id: time
         run: echo "::set-output name=now::$(date +'%Y-%m-%d %H:%M:%S')"
 
       - name: Cowsay the time
-        run: cowsay "The current time is ${{ steps.time.outputs.now }}"
+        run: |
+          cowsay "$(fortune) The current time is ${{ steps.time.outputs.now }}" -f $(shuf -e $(ls /usr/share/cowsay/) | head -n 1) | lolcat
